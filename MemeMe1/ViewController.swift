@@ -44,15 +44,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     // Initial configuration for the fields.
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.topText.delegate = self
-        self.bottomText.delegate = self
-        topText.text = topDefaultText
-        bottomText.text = bottomDefaultText
-        topText.defaultTextAttributes = memeTextAttributes
-        bottomText.defaultTextAttributes = memeTextAttributes
-        topText.textAlignment = NSTextAlignment.center
-        bottomText.textAlignment = NSTextAlignment.center
+        
+        // Configure textfields.
+        let textFields = [topText: topDefaultText, bottomText: bottomDefaultText]
+        for (textField, defaultText) in textFields {
+            setupTextField(textField: textField!, text: defaultText)
+        }
+    
         shareButton.isEnabled = false
+    }
+    
+    // Utility function for setting up textFIeld configuration.
+    func setupTextField(textField: UITextField, text: String) {
+        textField.text = text
+        textField.defaultTextAttributes = memeTextAttributes
+        textField.textAlignment = NSTextAlignment.center
+        textField.delegate = self
     }
     
     // Check if a camera is available on the device.  If not, disable the camera button.
