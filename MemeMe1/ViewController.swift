@@ -16,20 +16,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var shareButton: UIButton!
     
-    /**
-     A meme is made up of 4 parts:
-     - Text at the top of the image
-     - Text at the bottom of the image
-     - The original raw image without the text applied
-     - The meme image created of the text and iamge
-     */
-    struct Meme {
-        var topText: String
-        var bottomText: String
-        var origImage: UIImage
-        var memeImage: UIImage
-    }
-    
     let topDefaultText = "TOP"
     let bottomDefaultText = "BOTTOM"
     
@@ -151,11 +137,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-    // Remove observers for keyboard notifications.
+    // Remove all observers for keyboard notifications.
     func unsubscribeFromKeyboardNotifications() {
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(self)
     }
     
     // Save the meme to the photo libary.
@@ -167,7 +151,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     // Create the meme so it can be shared and saved.
     func generateMemedImage() -> UIImage {
         
-        toolbar.isHidden = true
+        let fields = [toolbar, shareButton]
+        
+        // Hide the toolbar and share button so it's not saved in the Meme image.
+        for field in fields  {
+            toggleDisplay(uiview: field!, hide: true)
+        }
 
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -175,14 +164,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
-        toolbar.isHidden = false
+        // Show the fields again.
+        for field in fields {
+            toggleDisplay(uiview: field!, hide: false)
+        }
 
         return memedImage
     }
     
+    // Utility function for hiding/showing fields.
+    func toggleDisplay(uiview: UIView, hide: Bool) {
+        uiview.isHidden = hide
+    }
+    
     // Show the built-in iOS activity for sharing media.
     @IBAction func share() {
-        // Generate the mem.
+        // Generate the meme.
         let memedImage: UIImage = generateMemedImage()
         
         // Show the share activity.
