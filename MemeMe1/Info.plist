@@ -62,5 +62,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>App needs to be able to choose an image from your photo library to create a meme</string>
+	<key>NSCameraUsageDescription</key>
+	<string>App needs to be able to take an image with the camera to create a meme</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>App needs access to be able to save a created meme to the photo library</string>
 </dict>
 </plist>
