@@ -32,10 +32,10 @@
                                 </items>
                             </toolbar>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WwC-ct-27V">
-                                <rect key="frame" x="0.0" y="74" width="414" height="705"/>
+                                <rect key="frame" x="0.0" y="74" width="414" height="739"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5B1-Y8-Vud">
-                                <rect key="frame" x="0.0" y="779" width="414" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5B1-Y8-Vud">
+                                <rect key="frame" x="0.0" y="794.5" width="414" height="18.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
@@ -46,8 +46,8 @@
                                     <action selector="share" destination="BYZ-38-t0r" eventType="touchUpInside" id="zwr-Im-09z"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oyX-FV-5gt">
-                                <rect key="frame" x="0.0" y="74" width="414" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oyX-FV-5gt">
+                                <rect key="frame" x="0.0" y="74" width="414" height="18.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
@@ -55,16 +55,16 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="336-L8-EJS" firstAttribute="top" secondItem="WwC-ct-27V" secondAttribute="bottom" id="1JB-zL-RsV"/>
                             <constraint firstItem="336-L8-EJS" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="73b-0y-x3r"/>
-                            <constraint firstItem="5B1-Y8-Vud" firstAttribute="top" secondItem="WwC-ct-27V" secondAttribute="bottom" id="9P5-H5-URa"/>
                             <constraint firstItem="336-L8-EJS" firstAttribute="top" secondItem="5B1-Y8-Vud" secondAttribute="bottom" id="Dql-Dg-bGA"/>
-                            <constraint firstItem="WwC-ct-27V" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="DvM-a6-ZV1"/>
                             <constraint firstItem="336-L8-EJS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Gz3-eO-tmI"/>
-                            <constraint firstItem="WwC-ct-27V" firstAttribute="top" secondItem="oyX-FV-5gt" secondAttribute="top" id="IVi-c2-TVD"/>
+                            <constraint firstItem="WwC-ct-27V" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="HgZ-di-hJW"/>
                             <constraint firstItem="336-L8-EJS" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="KY4-VC-3q7"/>
-                            <constraint firstItem="WwC-ct-27V" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ni9-dY-N1I"/>
                             <constraint firstItem="oyX-FV-5gt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Y5f-x4-E5J"/>
                             <constraint firstItem="oyX-FV-5gt" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bee-bi-gEl"/>
+                            <constraint firstItem="WwC-ct-27V" firstAttribute="top" secondItem="Ehn-M5-Sco" secondAttribute="bottom" id="crZ-GN-vTI"/>
+                            <constraint firstItem="WwC-ct-27V" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fca-k3-Fyw"/>
                             <constraint firstItem="5B1-Y8-Vud" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iwY-WD-bKt"/>
                             <constraint firstItem="oyX-FV-5gt" firstAttribute="top" secondItem="Ehn-M5-Sco" secondAttribute="bottom" id="jxa-xw-RFj"/>
                             <constraint firstItem="Ehn-M5-Sco" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="31" id="lRT-rj-K3n"/>
